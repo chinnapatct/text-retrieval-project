@@ -4,9 +4,12 @@ Run with: streamlit run app.py
 """
 
 import re
+import os
 import pandas as pd
 from datetime import date
 import streamlit as st
+from dotenv import load_dotenv
+load_dotenv()
 from search import search
 from refresh import run_refresh
 from price_impact import score_article, stars_html

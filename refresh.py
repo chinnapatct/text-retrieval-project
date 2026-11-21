@@ -4,6 +4,7 @@ tag risks, compute earnings proximity, clear old index, re-index everything.
 Called by the Streamlit app's "Refresh Data" button.
 """
 
+import os
 import time
 from datetime import datetime, timedelta
 
@@ -24,7 +25,7 @@ from risk_themes import tag_risks
 
 FINBERT_MODEL = "ProsusAI/finbert"
 
-FINNHUB_KEY = "dbjb6nhr01qkamq35mggdbjb6nhr01qkamq35mh0"
+FINNHUB_KEY = os.environ.get("FINNHUB_API_KEY", "")
 FINNHUB_NEWS_URL = "https://finnhub.io/api/v1/company-news"
 TARGET_PER_TICKER = 1000
 MIN_BODY_CHARS = 100
